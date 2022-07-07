@@ -2,19 +2,17 @@
 
 ## Overview
 
-This is a binary classification problem using neural networks and deep learning algorithms to predict if applicants for a charity funding will be successful. 
+Using neural network and deep learning algorithms from the TensorFlow library, we build a model to predict if applicants for a charity funding will be successful. 
 
-The dataset used to train and test the model contains more than 34,000 organizations that have received funding over the years, and includes information about the organizations such as type and funding amounts, and whether the organization was successful after being funded.
+This is a binary classification problem. The dataset used to train and test the model contains more than 34,000 organizations that have received funding over the years, and includes information about the organizations such as type and funding amounts, and whether the organization was successful after being funded.
 
 ## Results
 
-Deliverable 1: Preprocessing Data for a Neural Network Model
-Deliverable 2: Compile, Train, and Evaluate the Model
-Deliverable 3: Optimize the Model
-Deliverable 4: A Written Report on the Neural Network Model (README.md)
-
-
 ### Data Preprocessing
+
+Variables that do not contribute to the model were removed:
+- EIN
+- NAME
 
 Target:
 - IS_SUCCESSFUL (1 = yes / 0 = no)
@@ -30,15 +28,13 @@ Features:
 - SPECIAL_CONSIDERATIONS       
 - ASK_AMT                  
 
-Variables that do not contribute to the model and were removed:
-- EIN
-- NAME
+To reduce the likelihood of overfitting the model, CLASSIFICATION and APPLICATION_TYPE categories with low frequencies were grouped into a "Other" bin. Categorical data were encoded into numerical values so that they can be evaluated by the model.
 
-### Compiling, Training, and Evaluating the Model
+### Building, Training, and Evaluating the Model
 
-Initially, the following 2-layer neural network was used. Since it's a binary classification problem, a Sigmoid activstion function was used for the output layer. This model did not achieve the target accuracy of 75%.
+Initially, the following 2-layer neural network was used. Since it's a binary classification problem, a Sigmoid activstion function was used for the output layer. This model achieved a predictive accuracy of 72.66%, which is below the target of 75%.
 
-
+![nn_model](nn_model.png)
 
 To imcrease model performance, the following modifications were made:
 1. adjusted the grouping of rare occurances of CLASSIFICATION to allow for more distinct groups, i.e., more granularity
@@ -46,9 +42,13 @@ To imcrease model performance, the following modifications were made:
 3. added a thrid ReLU hidden layer with 10 neurons
 4. increased the number of epochs from 100 to 200
 
-However, these modifications did not meaningfully increase model performance, and the model's accuracy is still below 75%.
+![nn_model_optimized](nn_model_optimized.png)
 
-## Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and explain your recommendation.
+However, these modifications did not increase performance (accuracy = 72.41%), and the model's accuracy remains below 75%.
+
+## Summary
+
+Neither the original model nor the boosted deep neural network achieved the target accuracy of 75%. In fact, the more complex model increased run time without improving accuracy. As a next step, the problem should be explored using a random forest model, which often achieves comparable predictive accuracy on large tabular data with less code and faster performance.
 
 
 
