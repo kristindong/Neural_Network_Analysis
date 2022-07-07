@@ -2,9 +2,10 @@
 
 ## Overview
 
-Using neural network and deep learning algorithms from the TensorFlow library, we build a model to predict if applicants for a charity funding will be successful. 
+Using neural network and deep learning algorithms from the TensorFlow library, we build a model to predict if applicants for charity funding will be use the money effectively. 
 
-This is a binary classification problem. The dataset used to train and test the model contains more than 34,000 organizations that have received funding over the years, and includes information about the organizations such as type and funding amounts, and whether the organization was successful after being funded.
+This is a binary classification problem. The dataset used to train and test the model contains more than 34,000 organizations that have received funding over the years, and includes information about the organizations such as type and funding amounts, and whether the funding was used effectively.
+
 
 ## Results
 
@@ -15,18 +16,18 @@ Variables that do not contribute to the model were removed:
 - NAME
 
 Target:
-- IS_SUCCESSFUL (1 = yes / 0 = no)
+- IS_SUCCESSFUL - Was the money used effectively (1 = yes / 0 = no)
 
 Features:
-- APPLICATION_TYPE           
-- AFFILIATION                  
-- CLASSIFICATION              
-- USE_CASE                     
-- ORGANIZATION                 
-- STATUS                       
-- INCOME_AMT                   
-- SPECIAL_CONSIDERATIONS       
-- ASK_AMT                  
+- APPLICATION_TYPE — Alphabet Soup application type
+- AFFILIATION — Affiliated sector of industry
+- CLASSIFICATION — Government organization classification
+- USE_CASE — Use case for funding
+- ORGANIZATION — Organization type
+- STATUS — Active status
+- INCOME_AMT — Income classification
+- SPECIAL_CONSIDERATIONS — Special consideration for application
+- ASK_AMT — Funding amount requested                
 
 To reduce the likelihood of overfitting the model, CLASSIFICATION and APPLICATION_TYPE categories with low frequencies were grouped into a "Other" bin. Categorical data were encoded into numerical values so that they can be evaluated by the model.
 
@@ -46,9 +47,10 @@ To imcrease model performance, the following modifications were made:
 
 However, these modifications did not increase performance (accuracy = 72.41%), and the model's accuracy remains below 75%.
 
+
 ## Summary
 
-Neither the original model nor the boosted deep neural network achieved the target accuracy of 75%. In fact, the more complex model increased run time without improving accuracy. As a next step, the problem should be explored using a random forest model, which often achieves comparable predictive accuracy on large tabular data with less code and faster performance.
+Neither the original model nor the boosted deep neural network achieved the target accuracy of 75%. In fact, the more complex model increased run time without improving accuracy. As a next step, the problem should be explored using a random forest model, which can achieve comparable predictive accuracy on large tabular data with less code and faster performance.
 
 
 
