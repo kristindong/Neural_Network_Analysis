@@ -15,10 +15,10 @@ Variables that do not contribute to the model were removed:
 - EIN
 - NAME
 
-Target:
+Model target:
 - IS_SUCCESSFUL - Was the money used effectively (1 = yes / 0 = no)
 
-Features:
+Model features:
 - APPLICATION_TYPE — Alphabet Soup application type
 - AFFILIATION — Affiliated sector of industry
 - CLASSIFICATION — Government organization classification
@@ -29,15 +29,15 @@ Features:
 - SPECIAL_CONSIDERATIONS — Special consideration for application
 - ASK_AMT — Funding amount requested                
 
-To reduce the likelihood of overfitting the model, CLASSIFICATION and APPLICATION_TYPE categories with low frequencies were grouped into a "Other" bin. Categorical data were encoded into numerical values so that they can be evaluated by the model.
+To reduce the likelihood of overfitting the model, CLASSIFICATION and APPLICATION_TYPE categories with low frequencies were grouped into a "Other" bin. Categorical data were encoded into numerical values so that they can be evaluated by the model. Furthermore, the data was normalized and split into training and testing datasets.
 
 ### Building, Training, and Evaluating the Model
 
-Initially, the following 2-layer neural network was used. Since it's a binary classification problem, a Sigmoid activstion function was used for the output layer. This model achieved a predictive accuracy of 72.66%, which is below the target of 75%.
+Initially, a 2-layer neural network using the ReLU activation function was used. Since it's a binary classification problem, a Sigmoid activstion function was chosen for the output layer. This model achieved a predictive accuracy of 72.66%, which is below the target of 75%.
 
 ![nn_model](nn_model.png)
 
-To imcrease model performance, the following modifications were made:
+The following modifications were made to try to improve the predictive accuracy:
 1. adjusted the grouping of rare occurances of CLASSIFICATION to allow for more distinct groups, i.e., more granularity
 2. increased the number neurson from 8 to 24 in layer one, and from 5 to 10 neurons in layer two
 3. added a thrid ReLU hidden layer with 10 neurons
