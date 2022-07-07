@@ -2,9 +2,9 @@
 
 ## Overview
 
-Using neural network and deep learning algorithms from the TensorFlow library, we build a model to predict if applicants for charity funding will be use the money effectively. 
+Using neural network and deep learning algorithms from the TensorFlow library, we build a model to predict if applicants for charity funding will be successful at using the money effectively. 
 
-This is a binary classification problem. The dataset used to train and test the model contains more than 34,000 organizations that have received funding over the years, and includes information about the organizations such as type and funding amounts, and whether the funding was used effectively.
+This is a binary classification problem. The dataset used to train and test the model contains more than 34,000 organizations that have received funding over the years, and includes information about each organizations such as sector, organization type, funding amounts, and whether the funding was used effectively.
 
 
 ## Results
