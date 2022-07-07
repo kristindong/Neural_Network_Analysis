@@ -40,7 +40,7 @@ Initially, a 2-layer neural network using the ReLU activation function was used.
 The following modifications were made to try to improve the predictive accuracy:
 1. adjusted the grouping of rare occurances of CLASSIFICATION to allow for more distinct groups, i.e., more granularity
 2. increased the number neurson from 8 to 24 in layer one, and from 5 to 10 neurons in layer two
-3. added a thrid ReLU hidden layer with 10 neurons
+3. added a third ReLU hidden layer with 10 neurons
 4. increased the number of epochs from 100 to 200
 
 ![nn_model_optimized](nn_model_optimized.png)
